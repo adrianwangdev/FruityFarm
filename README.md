@@ -1,7 +1,7 @@
 ## FruityFarm Web
 
 ### Introduction
-> For practice
+> Practice
 
 - MongoDB/NodeJS/ReactJS
 - Login/Logout
