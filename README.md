@@ -4,7 +4,7 @@
 > Practice
 
 - MongoDB/NodeJS/ReactJS
-- Login/Logout
+- Login / Logout
 - Token Based Authentication
 
 ### Install
