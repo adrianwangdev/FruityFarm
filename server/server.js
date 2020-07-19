@@ -6,6 +6,7 @@ const config = require('./config/config').get(process.env.NODE_ENV)
 
 const app = express()
 
+/* Routes */
 const user = require('./routes/user')
 
 mongoose.connect(config.DATABASE, {
@@ -15,6 +16,7 @@ mongoose.connect(config.DATABASE, {
   useFindAndModify: false
 })
 
+/* Middleware */
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use('/api/users', user)

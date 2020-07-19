@@ -5,7 +5,7 @@ const config = {
   },
   default: {
     SECRET: 'A1X9WjIOT5oMKUxC',
-    DATABASE: 'mongodb://localhost:27017/'
+    DATABASE: 'mongodb://localhost:27017/FruityFarm'
   }
 }
 
