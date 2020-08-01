@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
+/* Middleware */
+const { auth } = require('../middleware/auth')
+
 /* Models */
 const { User } = require('../models/user')
 
@@ -45,6 +48,25 @@ router.post('/login', (req, res) => {
         })
       })
     })
+  })
+})
+
+router.get('/auth', auth, (req, res) => {
+  res.json({
+    auth: true,
+    userData: {
+      id: req.user._id,
+      email: req.user.email,
+      name: req.user.name,
+      lastname: req.user.lastname
+    }
+  })
+})
+
+router.get('/logout', auth, (req, res) => {
+  req.user.deleteToken(req.token, (err, user) => {
+    if (err) return res.status(400).send(err)
+    res.status(200).send('goodbye')
   })
 })
 
